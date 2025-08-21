@@ -19,7 +19,7 @@ public class EmailAdapterIn {
     private final EmailPortIn emailPortIn;
 
     @PostMapping
-    public void sendEmail(@RequestBody Email email) {
+    public void send(@RequestBody Email email) {
         try {
             log.info("Sending mail to: {}, subject: {}, text: {}", email.to(), email.subject(), email.text());
             emailPortIn.send(email);
