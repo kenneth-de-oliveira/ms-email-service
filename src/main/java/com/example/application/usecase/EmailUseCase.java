@@ -6,15 +6,15 @@ import com.example.application.core.port.out.EmailPortOut;
 
 public class EmailUseCase implements EmailPortIn {
 
-    private final EmailPortOut portOut;
+    private final EmailPortOut emailPortOut;
 
-    public EmailUseCase(EmailPortOut portOut) {
-        this.portOut = portOut;
+    public EmailUseCase(EmailPortOut emailPortOut) {
+        this.emailPortOut = emailPortOut;
     }
 
     @Override
-    public void sendEmail(Email email) {
-        portOut.sendEmail(email);
+    public void send(Email email) {
+        emailPortOut.send(email);
     }
 
 }

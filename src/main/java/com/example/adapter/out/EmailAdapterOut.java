@@ -13,7 +13,7 @@ public class EmailAdapterOut implements EmailPortOut {
 
     private final JavaMailSender javaMailSender;
 
-    public void sendEmail(Email email) {
+    public void send(Email email) {
         var message = this.buildSimpleMailMessage(email);
         javaMailSender.send(message);
     }

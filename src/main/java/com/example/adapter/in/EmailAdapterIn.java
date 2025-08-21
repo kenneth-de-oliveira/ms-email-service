@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class EmailAdapterIn {
 
-    private final EmailPortIn portIn;
+    private final EmailPortIn emailPortIn;
 
     @PostMapping
     public void sendEmail(@RequestBody Email email) {
         try {
             log.info("Sending mail to: {}, subject: {}, text: {}", email.to(), email.subject(), email.text());
-            portIn.sendEmail(email);
+            emailPortIn.send(email);
             log.info("Email sent successfully to: {}", email.to());
         } catch (Exception ex) {
             log.error("Error sending email: {}", ex.getMessage(), ex);

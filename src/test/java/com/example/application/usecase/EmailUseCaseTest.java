@@ -27,17 +27,17 @@ class EmailUseCaseTest {
     }
 
     @Test
-    void testSendEmailSuccess() {
+    void testSendSuccess() {
         Email email = new Email("test@example.com", "Subject", "Body");
-        Mockito.doNothing().when(emailPortOut).sendEmail(any(Email.class));
-        assertDoesNotThrow(() -> emailUseCase.sendEmail(email));
+        Mockito.doNothing().when(emailPortOut).send(any(Email.class));
+        assertDoesNotThrow(() -> emailUseCase.send(email));
     }
 
     @Test
-    void testSendEmailFailure() {
+    void testSendFailure() {
         Email email = new Email("fail@example.com", "Subject", "Body");
-        doThrow(RuntimeException.class).when(emailPortOut).sendEmail(any(Email.class));
-        assertThrows(RuntimeException.class, () -> emailUseCase.sendEmail(email));
+        doThrow(RuntimeException.class).when(emailPortOut).send(any(Email.class));
+        assertThrows(RuntimeException.class, () -> emailUseCase.send(email));
     }
 
 }
