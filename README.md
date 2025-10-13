@@ -84,7 +84,7 @@ Rel(out, mail, "Envia e-mail via SMTP")
   -d '{
         "to": "kennetholiveira2015@gmail.com",
         "subject": "Teste de Envio de E-mail",
-        "body": "Este é um teste de envio de e-mail usando o ms-email-service."
+        "text": "Este é um teste de envio de e-mail usando o ms-email-service."
       }'
 ```
 
